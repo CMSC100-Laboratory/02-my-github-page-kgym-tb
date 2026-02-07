@@ -1,6 +1,6 @@
 # :zap: **CMSC 100 PORTFOLIO** :zap:
-Name: Rafael Sam G. Olivo
-Degree Program: BS Computer Science
+Name: Rafael Sam G. Olivo<br>
+Degree Program: BS Computer Science<br>
 Live Website Link: https://cmsc100-laboratory.github.io/02-my-github-page-kgym-tb/
 
 ## *Steps on how to create GitHub page?* ##
@@ -14,7 +14,8 @@ Live Website Link: https://cmsc100-laboratory.github.io/02-my-github-page-kgym-t
 > I enjoyed learning more about HTML and CSS. I also learned a new feature - flexbox through a game called Flexbox Froggy.
 
 ## *References* ##
-Google Docs Link: https://docs.google.com/document/d/1xas4KT74-iqntq410j7nx0zutgd6fOIRXnAghTbVU_0/edit?usp=sharing
+Google Docs Link:<br>
+https://docs.google.com/document/d/1xas4KT74-iqntq410j7nx0zutgd6fOIRXnAghTbVU_0/edit?usp=sharing
 
 
 
