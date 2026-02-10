@@ -1,4 +1,4 @@
-/* Font: Space Grotesk */
+/* FONT: SPACE GROTESK */
 @font-face {
     font-family: 'Space Grotesk';
     src: url('fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf') format('truetype');
@@ -37,8 +37,199 @@ p {
     font-size: 16px;
 }
 
-/* Logo */
+/* CONSTANT VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --medium-gray: #2a2a2a;
+    --light-gray: #9a9a9a;
+    --red: #ff2e2e;
+    --red-dark: #cc0000;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION BAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.5rem 5%;
+    border-bottom: 1px solid var(--medium-gray);
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
     font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-buttons a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-buttons a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--red);
+    transition: width 0.3s ease;
+}
+
+.nav-buttons a:hover {
+    color: var(--red);
+}
+
+.nav-buttons a:hover::after {
+    width: 100%;
+}
+
+/* MAIN SECTION */
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 5% 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero Content */
+.main-content {
+    max-width: 1400px;
+    width: 100%;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main h1 {
+    font-family: 'Agrandir Wide', sans-serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+    position: relative;
+}
+
+.main h1 .line-1 {
+    display: block;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+.main h1 .line-2 {
+    display: block;
+    animation: fadeIn 1s ease-out 0.7s backwards;
+}
+
+.main h1 .highlight {
+    color: var(--red);
+    position: relative;
+}
+
+/* Blinking cursor */
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+    margin-left: 10px;
+    color: var(--red);
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-description {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--light-gray);
+    max-width: 700px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    animation: fadeIn 1s ease-out 0.9s backwards;
 }
