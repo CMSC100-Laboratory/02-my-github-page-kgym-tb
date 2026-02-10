@@ -158,10 +158,13 @@ nav .container {
     overflow: hidden;
 }
 
-/* Hero Content */
 .main-content {
     max-width: 1400px;
     width: 100%;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
     z-index: 1;
     animation: fadeInUp 1s ease-out;
 }
@@ -178,7 +181,7 @@ nav .container {
 }
 
 .main h1 {
-    font-family: 'Agrandir Wide', sans-serif;
+    font-family: 'Space-Grotesk', sans-serif;
     font-size: clamp(3rem, 8vw, 7rem);
     font-weight: 700;
     line-height: 1.1;
@@ -192,7 +195,7 @@ nav .container {
     animation: fadeIn 1s ease-out 0.5s backwards;
 }
 
-.main h1 .line-2 {
+.main h1 .line-2-highlight {
     display: block;
     animation: fadeIn 1s ease-out 0.7s backwards;
 }
@@ -232,4 +235,76 @@ nav .container {
     margin-bottom: 3rem;
     font-weight: 300;
     animation: fadeIn 1s ease-out 0.9s backwards;
+}
+
+/* PHOTO */
+.main-photo {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-out 1.1s backwards;
+}
+
+.photo-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 2px solid var(--medium-gray);
+    transition: all 0.4s ease;
+}
+
+.photo-container:hover {
+    border-color: var(--red);
+    transform: translateY(-5px);
+}
+
+.photo-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.photo-container:hover::before {
+    transform: scaleX(1);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+.photo-container img:hover {
+    transform: scale(1.05);
+}
+
+.photo-container:not(:has(img)),
+.photo-container img[src=""],
+.photo-container img:not([src]) {
+    background: linear-gradient(135deg, var(--medium-gray) 0%, var(--dark-gray) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-container:not(:has(img))::after,
+.photo-container img[src=""]::after {
+    content: 'RS';
+    position: absolute;
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--red);
+    font-family: 'Space-Grotesk', sans-serif;
 }
